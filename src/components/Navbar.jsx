@@ -7,7 +7,14 @@ const Navbar = () => {
   const navigate = useNavigate();
   // console.log(user.email)
 
-
+  const handleLogout = async () => {
+    try {
+      await logOut();
+      navigate('/');
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className='flex items-center justify-between p-4 z-[100] w-full absolute'>
